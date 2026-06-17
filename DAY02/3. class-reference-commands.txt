@@ -1,0 +1,174 @@
+    1  clear
+    2  docker -v
+    3  sudo apt  install docker.io
+    4  sudo apt uodate -y
+    5  sudo apt update -y
+    6  clear
+    7  sudo apt  install docker.io
+    8  clear
+    9  sudo usermod docker -aG ubuntu
+   10  sudo usermod ubuntu -aG docker
+   11  exit
+   12  clear
+   13  docker images
+   14  docker ps -a
+   15  docker -v
+   16  clear
+   17  docker
+   18  clear
+   19  docker images
+   20  docker ps
+   21  docker ps -a
+   22  docker -v
+   23  docker info
+   24  clear
+   25  history
+   26  clear
+   27  docker images
+   28  docker image ls
+   29  docker pull nginx
+   30  docker images
+   31  clear
+   32  docker images
+   33  docker images ls
+   34  docker image ls
+   35  clear
+   36  docker images
+   37  docker run -d -p 80:80 --name nginxcon nginx:latest
+   38  docker images
+   39  docker ps
+   40  clear
+   41  docker ps
+   42  docker stop 203fb7bd80ae
+   43  docker ps
+   44  docker ps -a
+   45  clear
+   46  docker ps -a
+   47  docker rm 203fb7bd80ae
+   48  docker ps -a
+   49  clear
+   50  git clone https://github.com/kkdevopsb9/maven-webapplication-project-kkfunda.git
+   51  clear
+   52  ls
+   53  cd maven-webapplication-project-kkfunda/
+   54  ls -lrth
+   55  mvn clean package
+   56  sudo apt install maven -y
+   57  clear
+   58  ls
+   59  mvn clean package
+   60  clear
+   61  ls -lrth
+   62  ls -lrth target/
+   63  clear
+   64  docker images
+   65  ls
+   66  vi Dockerfile
+   67  cat Dockerfile
+   68  docker build -t kkdevopsb9/maven-web:1.0  .
+   69  cat Dockerfile
+   70  clear
+   71  docker images
+   72  ls -lrth
+   73  docker build -t kkdevopsb9/maven-web:1.1 .
+   74  clear
+   75  docker images
+   76  docker ps
+   77  docker push kkdevopsb9/maven-web:1.0
+   78  docker login -u kkdevopsb9
+   79  clear
+   80  docker info
+   81  clear
+   82  docker images
+   83  docker push kkdevopsb9/maven-web:1.0
+   84  docker push kkdevopsb9/maven-web:1.1
+   85  clear
+   86  docker images
+   87  docker run -d -p 8080:8080 --name webappcon1 kkdevopsb9/maven-web:1.0
+   88  docker ps
+   89  docker run -d -p 8085:8080 --name webappcon2 kkdevopsb9/maven-web:1.0
+   90  docker ps
+   91  clear
+   92  docker ps
+   93  docker rm f2c3ea53b8aa 43f78afde085
+   94  docker rm -f f2c3ea53b8aa 43f78afde085
+   95  docker ps
+   96  clear
+   97  docker images
+   98  docker pull jenkins/jenkins
+   99  clear
+  100  docker pull sonarqube
+  101  clear
+  102  docker images
+  103  docker rmi 608a100c7165
+  104  docker images
+  105  docker images -q
+  106  docker rmi -f $(docker images -q)
+  107  docker images
+  108  clear
+  109  docker images
+  110  docker pull nginx
+  111  docker pull kkdevopsb9/maven-web:1.0
+  112  docker pull kkdevopsb9/maven-web:1.1
+  113  clear
+  114  docker images
+  115  ls
+  116  cat Dockerfile
+  117  docker build -t kkdevopsb9/maven-web:1.2 .
+  118  clear
+  119  docker images
+  120  ls -lrth target/
+  121  docker history b2e2751a6b4f
+  122  docker history ca5f7853faf5
+  123  clear
+  124  docker info
+  125  docker logout
+  126  docker info
+  127  clear
+  128  docker login -u kkdevopsb9
+  129  docker info
+  130  clear
+  131  docker system df
+  132  clear
+  133  docker images
+  134  docker save -o nginx.tar 608a100c7165
+  135  ls
+  136  docker rmi 608a100c7165
+  137  docker images
+  138  ls
+  139  docker load -i nginx.tar
+  140  docker images
+  141  docker load -i nginx.tar
+  142  docker images
+  143  docker images -a
+  144  clear
+  145  docker rmi -f $(docker images -q)
+  146  cear
+  147  clear
+  148  docker images
+  149  docker system prune
+  150  clear
+  151  ls
+  152  docker images
+  153  docker load -i nginx.tar
+  154  docker images
+  155  docker images -a
+  156  clear
+  157  docker pull sonarqube
+  158  docker images
+  159  docker pull ubuntu
+  160  docker images
+  161  docker info
+  162  clear
+  163  docker images
+  164  docker push ubuntu:latest
+  165  docker tag kkdevopsb9/ubuntu:latest ubuntu:latest
+  166  docker tag ubuntu:latest kkdevopsb9/ubuntu:latest
+  167  docker images
+  168  docker push kkdevopsb9/ubuntu:latest
+  169  clear
+  170  cat Dockerfile
+  171  docker build -t kkdevops1 .
+  172  clear
+  173  docker images
+  174  history
