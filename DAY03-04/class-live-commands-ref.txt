@@ -193,3 +193,107 @@
   193  docker images -a
   194  history
 ubuntu@ip-172-31-21-95:~/maven-webapplication-project-kkfunda$
+
+
+
+
+
+  1  clear
+    2  sudo apt update -y
+    3  clear
+    4  docker
+    5  sudo apt install docker.io
+    6  clear
+    7  sudo usermod ubuntu -aG docker
+    8  exit
+    9  clear
+   10  docker images
+   11  docker ps -a
+   12  docker pull kkdevopsb9/maven-web:1.1
+   13  clear
+   14  docker images
+   15  docker run -d -p 8080:8080 --name web1 kkdevopsb9/maven-web:1.1
+   16  docker ps -a
+   17  docker run -d -p 8081:8080 kkdevopsb9/maven-web:1.1
+   18  docker ps -a
+   19  pwd
+   20  docker exec -it web1 /bin/bash
+   21  pwd
+   22  docker ps -a
+   23  docker exec web1 ls webapps
+   24  docker exec web1 ls logs
+   25  docker exec web1 cat logs/manager.2026-06-19.log
+   26  docker exec web1 cat logs/catalina.2026-06-19.log
+   27  pwd
+   28  clear
+   29  docker ps -a
+   30  docker logs web1
+   31  clear
+   32  docker ps -a
+   33  docker top web1
+   34  clear
+   35  docker stats web1
+   36  docker run --memory="500m" -d -p 8082:8080 --name web3 kkdevopsb9/maven-web:1.1
+   37  docker ps -a
+   38  docker stats web3
+   39  docker ps -a
+   40  docker stats web3
+   41  clear
+   42  docker run --memory="100m" -d -p 8083:8080 --name web4 kkdevopsb9/maven-web:1.1
+   43  docker ps -a
+   44  docker stats web4
+   45  docker ps -a
+   46  docker start web4
+   47  docker ps -a
+   48  docker logs web4
+   49  clear
+   50  docker images
+   51  clear
+   52  docker ps -a
+   53  docker inspect web4
+   54  clear
+   55  docker inspect web3
+   56  clear
+   57  docker exec web3 ls -lrth logs
+   58  pwd
+   59  docker cp web3:/usr/local/tomcat/logs/catalina.2026-06-19.log catalina.2026-06-19.log
+   60  ls -lrth
+   61  cat catalina.2026-06-19.log
+   62  clear
+   63  ls
+   64  touch tomcat.sh
+   65  ls
+   66  pwd
+   67  docker cp tomcat.sh web3:/usr/local/tomcat/
+   68  docker exec web3 ls -lrth
+   69  clear
+   70  docker ps -a
+   71  docker images
+   72  docker commit web3 kkdevopsb9/web3bkp
+   73  ls
+   74  docker images
+   75  docker rm -f web3
+   76  clear
+   77  docker images
+   78  docker ps -a
+   79  docker run -d -p 9000:8080 --name web9 kkdevopsb9/web3bkp:latest
+   80  docker ps -a
+   81  docker exec web9 ls -lrth
+   82  clear
+   83  docker ps -a
+   84  docker inspect web1
+   85  clear
+   86  docker ps -a
+   87  docker inspect --format ".State.Status" web1
+   88  docker inspect --format "{{.State.Status}}" web1
+   89  docker inspect --format "{{.State.StartedAt}},{{.State.Status}}" web1
+   90  docker inspect --format "{{.State.StartedAt}},{{.State.Status}},{{NetworkSettings.IPAddress}}" web1
+   91  docker inspect --format "{{.State.StartedAt}},{{.State.Status}},{{.NetworkSettings.IPAddress}}" web1
+   92  docker inspect --format '{{.State.StartedAt}},{{.State.Status}},{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web1
+   93  docker inspect --format '{{.State.StartedAt}},{{.State.Status}},{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+   94  clear
+   95  docker
+   96  clear
+   97  history
+ubuntu@ip-172-31-4-17:~$
+
